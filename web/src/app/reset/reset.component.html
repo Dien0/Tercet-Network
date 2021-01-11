@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card draggable-header ui-draggable">
+      <div class="card-header ui-draggable-handle">
+        Forgotten Password
+        <button type="button" id="sidebarCollapse" class="btn btn-link move">
+          <span class="oi oi-move"></span>
+        </button>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title"><a routerLink="/">Login</a> or <a routerLink="/signup"> Signup </a></h4>
+        <form [formGroup]="resetForm" novalidate (ngSubmit)="reset()">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input  formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+            <small id="emailHelp" class="form-text text-muted">We'll email Password to your email with anyone else.</small>
+            <small *ngIf="resetForm.controls['email'].hasError('required')" id="emailHelp" class="form-text text-muted">Email address is required.</small>
+
+          </div>
+          <button type="submit" [disabled]="!resetForm.valid" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

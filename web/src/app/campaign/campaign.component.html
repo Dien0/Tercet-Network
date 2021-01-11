@@ -1,0 +1,27 @@
+<table class="datatable table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Game</th>
+            <th>Media</th>
+            <th>Reward</th>
+            <th>Daily budget</th>
+            <th>Budget</th>
+            <th>Status</th>
+            <th>Update</th>
+            </tr>
+    </thead>
+    <tbody>
+  <tr *ngFor="let campaign of campaigns">
+        <td>{{campaign.game_name}}</td>
+        <td>{{campaign.media}} </td>
+         <td>{{campaign.reward}} </td>
+       <td>{{campaign.daily_budget}} </td>
+        <td>{{campaign.budget}} </td>
+        <td>{{campaign.status}} </td>
+        <td><a (click)= "edit(campaign.campaign_id)">Edit</a> / <a (click)= "delete(campaign.campaign_id)">Del</a></td>
+
+  </tr>
+    </tbody>
+
+  </table>
+

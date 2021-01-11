@@ -1,0 +1,38 @@
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card draggable-header ui-draggable">
+        <div class="card-header ui-draggable-handle">
+          Change Password
+        </div>
+        <div class="card-body">
+          <h4 class="card-title"> New Password </h4>
+          <form [formGroup]="cpForm" novalidate (ngSubmit)="changePass()">
+            <div class="form-group">
+              <label for="oldPassword">current password</label>
+              <input  formControlName="oldPassword" type="password" class="form-control" id="oldPassword" aria-describedby="opHelp" placeholder="Enter curent password" required>
+              <small id="opHelp" class="form-text text-muted">Please enter yur current password.</small>
+              <small *ngIf="cpForm.controls['oldPassword'].hasError('required')" id="opHelp" class="form-text text-muted">oldPassword address is required.</small>
+
+            </div>
+            <div class="form-group">
+              <label for="newPassword">new password</label>
+              <input type="password" formControlName="newPassword" class="form-control" id="newPassword" placeholder="New Password" aria-describedby="npHelp" required>
+              <small id="npHelp" class="form-text text-muted">Please enter new password.</small>
+              <small *ngIf="cpForm.controls['newPassword'].hasError('required')" id="npHelp" class="form-text text-muted">password required.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPass">Confirm password</label>
+                <input type="password" formControlName="confirmPass" class="form-control" id="confirmPass" placeholder="Confirm new Password" aria-describedby="npHelp" required>
+                <small id="npHelp" class="form-text text-muted">Please enter new password.</small>
+                <small *ngIf="cpForm.hasError('notSame')" id="npHelp" class="form-text text-muted">password not same.</small>
+
+              </div>
+
+            <button type="submit" [disabled]="!cpForm.valid" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

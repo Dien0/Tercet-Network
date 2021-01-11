@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-sm-12">
+      <div class="card draggable-header ui-draggable">
+        <div class="card-header ui-draggable-handle">
+          Featured
+          <button type="button" id="sidebarCollapse" class="btn btn-link move">
+            <span class="oi oi-move"></span>
+          </button>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">Game</h4>
+          <form [formGroup]="gameForm" novalidate (ngSubmit)="registerGame()">
+            <div class="form-group">
+              <label for="name">Game name</label>
+              <input  formControlName="name" type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter Full name">
+              <input formControlName="id" type="hidden" class="form-control" id="gid">
+
+              <small id="nameHelp" class="form-text text-muted">Please enter your game name</small>
+            </div>
+            <div class="form-group">
+              <label for="platform">Platform</label>
+              <select formControlName="platform" type="text" class="form-control" id="platform" aria-describedby="platformHelp" placeholder="Select platform">
+                <option value="android">Android</option>
+                <option value="iphone">Iphone</option>
+              </select>
+              <small id="platformHelp" class="form-text text-muted">Please select your platform</small>
+            </div>
+            <div class="form-group">
+              <label for="bundle_id">bundle id</label>
+              <input formControlName="bundle_id" type="text" class="form-control" id="bundle_id" aria-describedby="bundle_idHelp" placeholder="Enter bundle_id">
+              <small id="bundle_idHelp" class="form-text text-muted">Please tell us about your game</small>
+            </div>
+            <div class="form-group">
+              <label for="mode">Mode</label>
+            <select formControlName="mode" class="form-control" id="mode" aria-describedby="modeHelp" placeholder="Select Status">
+                <option value="test" selected>Test</option>
+                <option value="live">Live</option>
+            </select>
+            <small id="modeHelp" class="form-text text-muted">Please select status</small>
+
+            </div>
+            <button type="submit" [disabled]="!gameForm.valid"  class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

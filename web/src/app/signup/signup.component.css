@@ -1,0 +1,13 @@
+
+  mat-form-field, mat-radio-group {
+    display: flex;
+    flex-direction: column;
+  }
+  .mat-raised-button{
+    width: 100%;
+  }
+
+  mat-card-content{
+    padding: 4%;
+  }
+  

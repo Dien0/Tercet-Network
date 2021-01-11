@@ -1,0 +1,66 @@
+{
+  "name": "rwd",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --proxy-config proxy.conf.json",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "scss-compile": "node-sass -rw assets/scss -o assets/css",
+    "e2e": "ng e2e"
+  },
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "compressed",
+      "extensionName": ".min.css",
+      "savePath": "~/../css/"
+    }
+  ],
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~9.0.0-rc.3",
+    "@angular/cdk": "^8.2.3",
+    "@angular/common": "~9.0.0-rc.3",
+    "@angular/compiler": "~9.0.0-rc.3",
+    "@angular/core": "~9.0.0-rc.3",
+    "@angular/forms": "~9.0.0-rc.3",
+    "@angular/material": "^8.2.3",
+    "@angular/platform-browser": "~9.0.0-rc.3",
+    "@angular/platform-browser-dynamic": "~9.0.0-rc.3",
+    "@angular/router": "~9.0.0-rc.3",
+    "bootstrap": "^4.4.1",
+    "bootstrap-material-design-icons": "^2.2.0",
+    "jquery": "^3.4.1",
+    "jquery-ui-dist": "^1.12.1",
+    "node-sass": "^4.13.0",
+    "open-iconic": "^1.1.1",
+    "popper.js": "^1.16.0",
+    "rxjs": "~6.5.3",
+    "tslib": "^1.10.0",
+    "web3": "^1.2.4",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^0.900.0-rc.8",
+    "@angular/cli": "~9.0.0-rc.3",
+    "@angular/compiler-cli": "~9.0.0-rc.3",
+    "@angular/language-service": "~9.0.0-rc.3",
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "@types/jasmine": "~3.4.0",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^5.1.2",
+    "jasmine-core": "~3.5.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~2.1.0",
+    "karma-jasmine": "~2.0.1",
+    "karma-jasmine-html-reporter": "^1.4.2",
+    "protractor": "~5.4.2",
+    "ts-node": "~8.3.0",
+    "tslint": "~5.18.0",
+    "typescript": "~3.6.4"
+  }
+}

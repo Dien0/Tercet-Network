@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-sm-12">
+      <div class="card draggable-header ui-draggable">
+        <div class="card-header ui-draggable-handle">
+          Featured
+          <button type="button" id="sidebarCollapse" class="btn btn-link move">
+            <span class="oi oi-move"></span>
+          </button>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">Ad Unit</h4>
+          <form [formGroup]="adUnitForm" novalidate (ngSubmit)="registerAdUnit()">
+              <div class="form-group">
+                  <label for="mediator_id">mediator name</label>
+                  <select formControlName="mediator_id" class="form-control" id="mediator_id" aria-describedby="mediator_idHelp" placeholder="Select mediator">
+                      <option *ngFor="let mediator of mediators" value="{{mediator.mediator_id}}">{{mediator.game_name}} -{{mediator.mediator_name}} - {{mediator.mediator}} - {{mediator.platform}}</option>
+                    </select>
+                    <small id="mediator_idHelp" class="form-text text-muted">Please select your mediator</small>
+                </div>
+                <div class="form-group">
+                  <label for="unit">Ad Type</label>
+                  <br>
+            <label class="form-check-label" for="unit">
+        Rewarded
+
+                  <input formControlName="type" type="radio" value="REWARDED" class="form-control" id="type">
+      </label>      <label class="form-check-label" for="unit">
+        Interstitial
+                  <input formControlName="type" type="radio" value="INTERSTITIAL" class="form-control" id="type" aria-describedby="typeHelp" >
+</label>
+                  <small id="typeHelp" class="form-text text-muted">Video Ad is rewarded, playable, offer wall, interstitial</small>
+                </div>
+                <div class="form-group">
+                  <label for="reward">Reward Amount</label>
+                  <input formControlName="reward" type="number" class="form-control" id="reward" aria-describedby="rewardHelp" placeholder="Enter reward for player">
+                  <small id="rewardHelp" class="form-text text-muted">Please tell us about reward you wish to pay</small>
+                </div>
+                <div class="form-group">
+              <label for="unit">Ad Unit</label>
+              <input formControlName="unit" type="text" class="form-control" id="unit" aria-describedby="unitHelp" placeholder="Enter unit">
+              <small id="unitHelp" class="form-text text-muted">Please tell us ad unit</small>
+            </div>
+            <button type="submit" [disabled]="!adUnitForm.valid"  class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

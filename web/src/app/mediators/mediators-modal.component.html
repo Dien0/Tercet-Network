@@ -1,0 +1,33 @@
+<div class="modal fade" id="mediatorModal" tabindex="-1" role="dialog" aria-labelledby="mediatorModalLabel" aria-hidden="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Games</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<div class="row sortable ui-sortable">
+<div *ngFor="let mediator of mediators" class="col-sm-3 ui-sortable-handle" style="position: relative; left: 0px; top: 0px;">
+   <div class="card draggable1">
+        <span class="oi oi-icon-name" title="icon name" aria-hidden="true"></span>
+        <div class="card-body">
+          <h5 class="card-title">{{mediator.game_name}}  </h5>
+          <p class="card-text">{{mediator.mediator}}
+
+         <span>{{mediator.mode}}</span>
+          </p>
+          <a href="#" class="btn btn-primary">Select</a>
+        </div>
+      </div>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" >View All</button>
+</div>
+</div>
+  </div>
+</div>
+

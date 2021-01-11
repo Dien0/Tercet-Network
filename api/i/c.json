@@ -1,0 +1,24 @@
+{
+    "development": {
+        "config_id": "development",
+        "app_name": "Rewardian",
+        "app_desc": "Rewards app",
+        "node_port": 3000,
+        "json_indentation": 4,
+        "database": "rwd-db-dev"
+    },
+    "testing": {
+        "config_id": "testing",
+        "database": "rwd-db-test"
+    },
+    "staging": {
+        "config_id": "staging",
+        "node_port": 8080,
+        "database": "rwd-db-stag"
+    },
+    "production": {
+        "config_id": "production",
+        "node_port": 8080,
+        "database": "rwd-db-prod"
+    }
+}

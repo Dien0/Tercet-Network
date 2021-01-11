@@ -1,0 +1,16 @@
+
+<div class="card" *ngFor="let game of games">
+    <div class="card-body">
+<button (click) = "edit(game.id)">Edit</button>
+<button (click) = "delete(game.id)">Delete</button>
+      <h5 class="card-title">{{game.name}}</h5>
+      <p class="card-text">{{game.bundle_id}}</p>
+      <p class="card-text">{{game.app_id}}</p>
+      <p class="card-text">{{game.platform}}</p>
+      <p class="card-text">{{game.mode}}</p>
+      <p class="card-text">{{game.createdAt | date}}</p>
+      <p class="card-text"> <span class="h1 fab fa-{{game.platform == 'ios'?'apple':game.platform}}"></span>
+      </p>
+    </div>
+  </div>
+

@@ -1,0 +1,15 @@
+<h3>Featured Games</h3>
+
+<div class="card" *ngFor="let game of games">
+    <div class="card-body">
+        <h4 class="card-title"><span>Reward: </span> {{game.rewards}}</h4>
+      <h5 class="card-title">{{game.name}}</h5>
+      <p class="card-text">{{game.description}}</p>
+      <p class="card-text">{{game.app_id}}</p>
+      <p class="card-text">{{game.platform}}</p>
+      <p class="card-text">{{game.mode}}</p>
+      <p class="card-text">{{game.createdAt | date}}</p>
+      <p class="card-text"> <span class="h1 fab fa-{{game.platform == 'ios'?'apple':game.platform}}"></span>
+      </p>
+    </div>
+  </div>

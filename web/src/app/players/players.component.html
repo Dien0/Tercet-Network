@@ -1,0 +1,21 @@
+<table class="datatable table table-striped table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Game</th>
+           <th>Platform</th>
+           <th>Player</th>
+            <th>Since</th>
+
+            </tr>
+    </thead>
+    <tbody>
+  <tr *ngFor="let player of players">
+        <td>{{player.game_name}}</td>
+        <td>{{player.platform}} </td>
+        <td>{{player.player_name}} </td>
+        <td>{{player.player_since}} </td>
+
+  </tr>
+    </tbody>
+
+  </table>

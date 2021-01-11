@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col-sm-12">
+      <div class="card draggable-header ui-draggable">
+        <div class="card-header ui-draggable-handle">
+          Featured
+          <button type="button" id="sidebarCollapse" class="btn btn-link move">
+            <span class="oi oi-move"></span>
+          </button>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">Campaign</h4>
+          <form [formGroup]="campaignFormGroup" novalidate (ngSubmit)="registerCampaign()">
+            <div class="form-group">
+              <label for="game">game name</label>
+              <input formControlName="campaign_id" type="hidden" class="form-control" id="cid">
+
+              <select formControlName="game" class="form-control" id="game" aria-describedby="gameHelp" placeholder="Select game">
+                  <option *ngFor="let game of games" value="{{game.id}}">{{game.name}} - {{game.platform}}</option>
+                </select>
+                <small id="gameHelp" class="form-text text-muted">Please select your game</small>
+            </div>
+            <div class="form-group">
+              <label for="status">Status</label>
+              <select formControlName="status" class="form-control" id="status" aria-describedby="statusHelp" placeholder="Select Status">
+                <option value="active" selected>Active</option>
+                <option value="disabled">Disable</option>
+              </select>
+              <small id="statusHelp" class="form-text text-muted">Please Select Status</small>
+            </div>
+  <div class="form-group">
+              <label for="reward">Reward</label>
+              <input formControlName="reward" type="text" class="form-control" id="reward" aria-describedby="rewardHelp"
+                placeholder="Enter Reward from campaign">
+              <small id="rewardHelp" class="form-text text-muted">Please enter app id from campaign</small>
+            </div>
+            <div class="form-group">
+              <label for="media">video url</label>
+              <input formControlName="media"  type="text" class="form-control" id="media" aria-describedby="mediaHelp"
+                placeholder="Enter your video url">
+              <small id="mediaHelp" class="form-text text-muted">Your bundle id</small>
+            </div>
+            <div class="form-group">
+              <label for="budget">Ad budget</label>
+              <input formControlName="budget" type="text" class="form-control" id="budget" aria-describedby="budgetHelp"
+                placeholder="Enter your ad budget">
+              <small id="budgetHelp" class="form-text text-muted">Your ad unit id</small>
+            </div>
+            <div class="form-group">
+              <label for="daily_budget">Ad daily budget</label>
+              <input formControlName="daily_budget" type="text" class="form-control" id="daily_budget" aria-describedby="daily_budgetHelp"
+                placeholder="Enter your ad daily budget">
+              <small id="daily_budgetHelp" class="form-text text-muted">Your ad daily budget or position</small>
+            </div>
+             <button type="submit" [disabled]="!campaignFormGroup.valid" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

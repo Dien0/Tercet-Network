@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card draggable-header ui-draggable">
+      <div class="card-header ui-draggable-handle">
+        Featured
+        <button type="button" id="sidebarCollapse" class="btn btn-link move">
+          <span class="oi oi-move"></span>
+        </button>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Mediation</h4>
+        <form [formGroup]="mediatorFormGroup" novalidate (ngSubmit)="registerMediator()">
+          <div class="form-group">
+            <label for="game">game name</label>
+            <input formControlName="mediator_id" type="hidden" class="form-control" id="gid">
+
+            <select formControlName="game" class="form-control" id="game" aria-describedby="gameHelp" placeholder="Select game">
+                <option *ngFor="let game of games" value="{{game.id}}">{{game.name}} - {{game.platform}}</option>
+              </select>
+              <small id="gameHelp" class="form-text text-muted">Please select your game</small>
+          </div>
+          <div class="form-group">
+            <label for="mediator">Mediator</label>
+            <select formControlName="mediator"  class="form-control" id="mediator" aria-describedby="mediatorHelp" placeholder="Select Mediator">
+              <option value="adcolony">AdColony</option>
+              <option value="admob">Admob</option>
+              <option value="chartboost">ChartBoost</option>
+              <option value="criteo">Criteo</option>
+              <option value="imobile">Imobile</option>
+              <option value="inmobi">Inmobi</option>
+              <option value="ironsource">Ironsource</option>
+              <option value="mopub">Mopub</option>
+              <option value="personaly">Personaly</option>
+              <option value="smaato">Smaato</option>
+              <option value="tapjoy">Tapjoy</option>
+              <option value="vungle">Vungle</option>
+              <option value="yandex">Yandex</option>
+            </select>
+            <small id="mediatorHelp" class="form-text text-muted">Please Select Mediator</small>
+          </div>
+
+       <div class="form-group">
+            <label for="app_id">App ID</label>
+            <input formControlName="app_id" type="text" class="form-control" id="app_id" aria-describedby="app_idHelp"
+              placeholder="Enter App id from mediator">
+            <small id="app_idHelp" class="form-text text-muted">Please enter app id from mediator</small>
+          </div>
+
+          <div class="form-group">
+            <label for="app_secret">App secret</label>
+            <input formControlName="app_secret" type="text" class="form-control" secret="app_secret" aria-describedby="app_secretHelp"
+              placeholder="Enter App secret from mediator">
+            <small secret="app_secretHelp" class="form-text text-muted">Please enter app secret from mediator</small>
+          </div>
+          <button type="submit" [disabled]="!mediatorFormGroup.valid" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

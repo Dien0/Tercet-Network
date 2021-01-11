@@ -1,0 +1,23 @@
+<table class="datatable table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Game</th>
+                <th>OS</th>
+                <th>Mediator</th>
+               <th>Unit</th>
+               <th>Cmd</th>
+                </tr>
+        </thead>
+        <tbody>
+
+     <tr *ngFor="let adUnit of adUnits">
+            <td>{{adUnit.game_name}} </td>
+            <td>{{adUnit.platform}} </td>
+            <td>{{adUnit.mediator}} </td>
+            <td>{{adUnit.unit}} </td>
+            <td><a (click)= "edit(adUnit.unit_id)">Edit</a> / <a (click)= "delete(adUnit.unit_id)">Del</a></td>
+
+     </tr>
+        </tbody>
+
+    </table>

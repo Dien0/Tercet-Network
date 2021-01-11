@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="card">
+    <button type="button" (click)="googleAuth()" class="btn btn-primary google-plus btn-lg btn-block"> Player Login with Google <i class="fa fa-google-plus"></i> </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card draggable-header ui-draggable">
+      <div class="card-header ui-draggable-handle">
+        Login
+        <button type="button" id="sidebarCollapse" class="btn btn-link move">
+          <span class="oi oi-move"></span>
+        </button>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Publisher Login or <a routerLink="/signup"> Signup </a></h4>
+        <form [formGroup]="loginForm" novalidate (ngSubmit)="login()">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input  formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <small *ngIf="loginForm.controls['email'].hasError('required')" id="emailHelp" class="form-text text-muted">Email address is required.</small>
+
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" class="form-control" id="password" placeholder="Password" required>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input"> Check me out
+            </label>
+            <div><a  routerLink="/forgot">Forgot Password</a></div>
+          </div>
+          <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

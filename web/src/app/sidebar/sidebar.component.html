@@ -1,0 +1,139 @@
+<div id="sidebar" class="col-12 col-md-3 col-xl-2 sw-sidebar">
+    <form class="sw-search d-flex align-items-center">
+      <button class="btn btn-link sw-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#sw-docs-nav"
+        aria-controls="sw-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 30 30" width="30" height="30" focusable="false">
+          <title>Menu</title>
+          <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22" />
+        </svg>
+
+      </button>
+    </form>
+
+
+    <nav class="collapse sw-links" id="sw-docs-nav">
+      <div class="sw-toc-item">
+        <a class="sw-toc-link" href="#">
+          <span class="oi oi-dashboard"></span> Dashboard
+        </a>
+      </div>
+      <div class="sw-toc-item">
+        <a class="sw-toc-link" data-toggle="collapse" href="#collapseProductSubMenus" aria-expanded="false" aria-controls="collapseProductSubMenus">
+          <span class="oi oi-globe"></span> Games
+        </a>
+        <ul id="collapseProductSubMenus" class="collapse list-unstyled">
+          <li *ngIf="userType() == 'publisher'" class="">
+            <a routerLink="/new-game">Create</a>
+          </li>
+          <li *ngIf="userType() == 'player'" class="">
+            <a routerLink="/top-games">Top</a>
+          </li>
+          <li *ngIf="userType() == 'player'" class="">
+            <a routerLink="/featured-games">Featured</a>
+          </li>
+          <li *ngIf="userType() == 'publisher'">
+            <a routerLink="/games">List</a>
+          </li>
+          <li *ngIf="userType() == 'publisher'">
+            <a routerLink="/game-activity">Activity</a>
+          </li>
+          <li>
+            <a routerLink="/games-stat">Stats</a>
+          </li>
+        </ul>
+      </div>
+      <div class="sw-toc-item" *ngIf="userType() == 'publisher'">
+        <a class="sw-toc-link" data-toggle="collapse" href="#collapseModuleSubMenus" aria-expanded="false" aria-controls="collapseModuleSubMenus">
+          <span class="oi oi-browser"></span> Campaign
+        </a>
+        <ul id="collapseModuleSubMenus" class="collapse list-unstyled">
+          <li class="">
+            <li>
+              <a routerLink="/campaign-activity">Activity</a>
+            </li>
+            <li>
+            <a routerLink="/new-campaign">Create</a>
+          </li>
+          <li>
+            <a routerLink="/campaigns">List</a>
+          </li>
+        </ul>
+      </div>
+      <div class="sw-toc-item" *ngIf="userType() == 'publisher'">
+        <a class="sw-toc-link" data-toggle="collapse" href="#collapsePageSubMenus" aria-expanded="false" aria-controls="collapsePageSubMenus">
+          <span class="oi oi-browser"></span> Mediation
+        </a>
+        <ul id="collapsePageSubMenus" class="collapse list-unstyled">
+          <li class="">
+            <a routerLink="/new-mediation">Create</a>
+          </li>
+          <li>
+            <a routerLink="/mediations">List</a>
+          </li>
+          <li *ngIf="userType() == 'publisher'">
+            <a routerLink="/mediation-activity">Activity</a>
+          </li>
+          <li *ngIf="userType() == 'publisher'">
+            <a routerLink="/mediation-error">Error</a>
+          </li>
+        </ul>
+      </div>
+      <div class="sw-toc-item" *ngIf="userType() == 'publisher'">
+        <a class="sw-toc-link" data-toggle="collapse" href="#collapseArticleSubMenus" aria-expanded="false" aria-controls="collapseArticleSubMenus">
+          <span class="oi oi-browser"></span> Ad units
+        </a>
+        <ul id="collapseArticleSubMenus" class="collapse list-unstyled">
+          <li class="">
+            <a routerLink="/new-adUnit">Create</a>
+          </li>
+          <li>
+            <a routerLink="/adUnits">List</a>
+          </li>
+        </ul>
+      </div>
+        <div class="sw-toc-item">
+        <a class="sw-toc-link" data-toggle="collapse" href="#collapseAppearanceSubMenus" aria-expanded="false" aria-controls="collapseAppearanceSubMenus">
+          <span class="oi oi-brush"></span> Rewards
+        </a>
+        <ul id="collapseAppearanceSubMenus" class="collapse list-unstyled">
+          <li>
+            <a routerLink="/rewards/inprogress">New</a>
+            <a routerLink="/rewards/pending">Pending</a>
+            <a routerLink="/rewards/paid">Paid</a>
+          </li>
+        </ul>
+      </div>
+      <div class="sw-toc-item" *ngIf="userType() == 'publisher'">
+        <a class="sw-toc-link" data-toggle="collapse" href="#collapseFileSubMenus" aria-expanded="false" aria-controls="collapseFileSubMenus">
+          <span class="oi oi-image"></span> Players
+        </a>
+        <ul id="collapseFileSubMenus" class="collapse list-unstyled">
+          <li class="">
+            <a  routerLink="/players">List</a>
+          </li>
+        </ul>
+      </div>
+      <div class="sw-toc-item">
+        <a class="sw-toc-link" data-toggle="collapse" href="#collapseSettingSubMenus" aria-expanded="false" aria-controls="collapseSettingSubMenus">
+          <span class="oi oi-wrench"></span> Settings
+        </a>
+        <ul id="collapseSettingSubMenus" class="collapse list-unstyled">
+          <li class="">
+            <a routerLink="/profile">Profile</a>
+          </li>
+          <li class="" *ngIf="userType() == 'publisher'">
+            <a routerLink="/wallet/address">Wallet</a>
+          </li>
+          <li class="" *ngIf="userType() == 'publisher'">
+            <a routerLink="/balance">Balance</a>
+          </li>
+          <li class="">
+            <a routerLink="/change-pass">Change password</a>
+          </li>
+          <li>
+            <a (click)="logout()">Sign out</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>

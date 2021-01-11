@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card draggable-header ui-draggable">
+      <div class="card-header ui-draggable-handle">
+        Featured
+        <button type="button" id="sidebarCollapse" class="btn btn-link move">
+          <span class="oi oi-move"></span>
+        </button>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title">Signup or <a routerLink="/signin">Signin</a></h4>
+        <form [formGroup]="regFormGroup" novalidate (ngSubmit)="signup()">
+          <div class="form-group">
+            <label for="signupEmail1">Full name</label>
+            <input formControlName="name" type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter Full name">
+            <small id="nameHelp" class="form-text text-muted">Please enter your full name</small>
+          </div>
+
+          <div class="form-group">
+            <label for="signupEmail1">Email address</label>
+            <input formControlName="email" type="email" class="form-control" id="signupEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input formControlName="password" type="password" class="form-control" id="password" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="confirmPass">Repeat Password</label>
+            <input formControlName="confirmPass" type="password" class="form-control" id="confirmPass" placeholder="Confirm Password">
+          </div>
+          <button type="submit" [disabled]="!regFormGroup.valid"  class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

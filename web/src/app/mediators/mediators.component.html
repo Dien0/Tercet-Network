@@ -1,0 +1,23 @@
+<table class="datatable table table-striped table-bordered" style="width:100%">
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Game</th>
+          <th>Platform</th>
+          <th>App Id</th>
+          <th>Update</th>
+          </tr>
+  </thead>
+  <tbody>
+<tr *ngFor="let mediator of mediators">
+      <td>{{mediator.mediator}} </td>
+      <td>{{mediator.game_name}}</td>
+      <td>{{mediator.platform}} </td>
+      <td>{{mediator.mediator_appid}} </td>
+      <td><a (click)= "edit(mediator.mediator_id)">Edit</a> / <a (click)= "delete(mediator.mediator_id)">Del</a></td>
+
+</tr>
+  </tbody>
+
+</table>
+
